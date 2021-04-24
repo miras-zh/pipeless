@@ -1,0 +1,19 @@
+<hr>
+<h1>counter component works!</h1>
+<div>
+    <h1>App Counter:{{appCounterService.counter}}</h1>
+    <div class="card">
+        <button class="btn" (click)="appCounterService.increase()">+</button>
+        <button class="btn" (click)="appCounterService.decrease()">-</button>
+        <p></p>
+    </div>
+</div>
+
+<div>
+    <h1>Local Counter:{{localCounterService.counter}}</h1>
+    <div class="card">
+      <button class="btn" (click)="localCounterService.increase()">+</button>
+      <button class="btn" (click)="localCounterService.decrease()">-</button>
+      <p></p>
+    </div>
+  </div>
