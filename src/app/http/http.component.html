@@ -1,9 +1,9 @@
 <div class="container">
-    <h2>Angular HttpClient</h2>
+    <h2>список задач (HttpClient)</h2>
 
     <div class="card">
         <div class="form-control">
-            <input type="text" placeholder="Название" [(ngModel)]="todoTitle">
+            <input type="text" placeholder="Название" [(ngModel)]="todoTitle" (keyup.enter)='addTodo()'>
         </div>
         <button class="btn" (click)="addTodo()">Добавить</button>
         <button class="btn" (click)="fetchTodos()">Загрузить</button>
@@ -15,11 +15,19 @@
         <div *ngIf="todos.length; else noTodos">
             <div class="card" *ngFor="let todo of todos">
                 <p>
+                    <span class="todoId">{{todo.id}}</span>
                     <span [class.completed]="todo.completed">{{todo.title | titlecase}}</span>
                     <span>
-                        <button class="btn btn-danger" (click)="removeTodo(todo.id!)">Удалить</button>
-                        <button class="btn" [disabled]="todo.completed"
-                            (click)='completeTodo(todo.id!)'>Завершить</button>
+                        <button class="btn btn-danger" (click)="removeTodo(todo.id!)" [class.completeremove]="todo.completed">
+                            <span *ngIf='!todo.completed'>Удалить</span>
+                            <span *ngIf='todo.completed'>&times;</span>
+                            
+                        </button>
+                        <button class="btn" (click)='completeTodo(todo.id!)' [class.complete]="todo.completed">
+                            <span *ngIf='!todo.completed'> Завершить</span>
+                            <span *ngIf='todo.completed'>Вернуть</span>
+                        </button>
+                        <!--[disabled]="todo.completed"-->
                     </span>
                 </p>
             </div>

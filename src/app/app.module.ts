@@ -12,6 +12,11 @@ import { CounterComponent } from './counter/counter.component';
 import { HttpComponent } from './http/http.component';
 import { HttpClientModule }   from '@angular/common/http';
 import { Http2Component } from './http2/http2.component';
+import { AboutComponent } from './about/about.component';
+import { AboutExtraComponent } from './about-extra/about-extra.component';
+import { HomeComponent } from './home/home.component';
+import { PostComponent } from './post/post.component';
+import { PostsComponent } from './posts/posts.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +26,12 @@ import { Http2Component } from './http2/http2.component';
     FilterPipe,
     CounterComponent,
     HttpComponent,
-    Http2Component
+    Http2Component,
+    AboutComponent,
+    AboutExtraComponent,
+    HomeComponent,
+    PostComponent,
+    PostsComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,8 @@
+<h2>Posts Page</h2>
+<button class="btn">Show ID</button>
+<button class="btn">Show ID (Program)</button>
+<div class="card" *ngFor="let post of postService.posts">
+    <h4>
+        <a [routerLink]="['/posts',post.id]">ID:{{post.id}}|{{post.title}}</a>
+    </h4>
+</div>

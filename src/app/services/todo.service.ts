@@ -27,6 +27,7 @@ export class TodoService {
   fetchTodos(): Observable<ToDo[]> {
     return this.http.get<ToDo[]>('https://jsonplaceholder.typicode.com/todos?_limit=5')
       .pipe(delay(500))
+      // https://jsonplaceholder.typicode.com/todos Сервер -  тяну отсюда массив 
   }
 
 

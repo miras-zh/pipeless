@@ -1,0 +1,23 @@
+a {
+    text-decoration: none;
+    color: inherit;
+}
+.navbar{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin-left: 5%;
+    margin-top: 10px;
+}
+
+.navbar ul{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 20%;
+}
+
+.navbar ul li{
+    margin-left: 35px;
+    font-size: 25px;
+    font-weight: 500;
+}

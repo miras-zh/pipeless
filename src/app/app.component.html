@@ -1,4 +1,13 @@
-<app-http></app-http>
+<nav class="navbar">
+    <h1><a routerLink=""> Navigation</a></h1>
+    <ul>
+        <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"><a routerLink="">Home</a></li>
+        <li routerLinkActive="active"><a routerLink="about">About</a></li>
+        <li routerLinkActive="active"><a routerLink="posts">Posts</a></li>
+        <li routerLinkActive="active"><a routerLink="http">Задачник</a></li>
+    </ul>
+</nav>
 <hr>
+<router-outlet></router-outlet>
 <!-- <app-http2></app-http2> -->
 

@@ -14,6 +14,7 @@ export class HttpComponent implements OnInit {
   loading = false;
   todosEmpty: ToDo[] = [];
   idCounter:number = 5;
+  toggleTextButton!:boolean;
 
   constructor(public todoService: TodoService) { }
 
@@ -22,6 +23,7 @@ export class HttpComponent implements OnInit {
   }
 
   addTodo() {
+    this.idCounter = this.todos.length
     if (!this.todoTitle.trim()) {
       return
     }
@@ -31,7 +33,10 @@ export class HttpComponent implements OnInit {
       completed: false,
       id: this.idCounter++
     })
-      .subscribe(todo => { this.todos.push(todo); this.todoTitle = '' })
+      .subscribe(todo => { 
+        todo.id = this.idCounter
+        this.todos.push(todo); 
+        this.todoTitle = '' })
   }
 
   fetchTodos() {
@@ -54,7 +59,9 @@ export class HttpComponent implements OnInit {
             this.todosEmpty.push(this.todos[i]);
           }
         }
-
+        for(let j:number = 0; j<this.todosEmpty.length;j++){
+          this.todosEmpty[j].id = j+1
+        }
         this.todos = this.todosEmpty;
         this.todosEmpty = [];
       })
