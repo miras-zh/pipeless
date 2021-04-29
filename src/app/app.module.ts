@@ -9,7 +9,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FilterPipe } from './pipe/filter.pipe';
 import { AppCounterService } from './services/app-counter.services';
 import { CounterComponent } from './counter/counter.component';
-import { FormsComponent } from './forms/forms.component';
+import { HttpComponent } from './http/http.component';
+import { HttpClientModule }   from '@angular/common/http';
+import { Http2Component } from './http2/http2.component';
 
 @NgModule({
   declarations: [
@@ -18,13 +20,15 @@ import { FormsComponent } from './forms/forms.component';
     ExMarksPipe,
     FilterPipe,
     CounterComponent,
-    FormsComponent
+    HttpComponent,
+    Http2Component
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [
   ],

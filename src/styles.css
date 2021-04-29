@@ -49,14 +49,19 @@ img {
   outline: none;
 }
 
-.btn :disabled {
+btn:hover {
+  opacity: 0.8;
+}
+
+.btn:disabled {
   background: #ccc;
   color: #000;
   cursor: not-allowed;
 }
 
-.btn:hover {
-  opacity: 0.8;
+.btn.btn-danger {
+  background: #dc3545;
+  color: #fff;
 }
 
 .form-control {
@@ -64,32 +69,41 @@ img {
   margin-top: 0.3rem;
   margin-bottom: .5rem;
 }
+
 .form-control label {
-    display: block;
-    font-weight: bold;
-    font-size: 1rem;
-    margin-bottom: .5rem;
-  }
+  display: block;
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: .5rem;
+}
 
-  .form-control  input {
-    margin-bottom: 0;
-  }
+.form-control input {
+  margin-bottom: 0;
+}
 
-  .form-control, 
-  .validation {
-    color: red;
-  }
+.form-control.validation {
+  color: red;
+}
 
 
 .card {
   padding: 1rem;
   border: #ccc 1px dotted;
   margin: 0.7rem 0;
+  font-size: 24px;
 }
 
-input,
-select,
-textarea {
+.card p {
+  display: flex;
+  justify-content: space-between;
+  
+}
+.card p span.completed {
+  text-decoration: line-through;
+  color: #666;
+}
+
+input, select, textarea {
   display: block;
   width: 100%;
   padding: 0.4rem;

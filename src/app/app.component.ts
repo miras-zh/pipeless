@@ -1,11 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AppCounterService } from './services/app-counter.services';
 import { LocalCounterService } from './services/local-counter.service';
+
 
 export interface Post {
   title:string,
   text:string
 }
+
+
 
 @Component({
   selector: 'app-root',
@@ -14,6 +17,8 @@ export interface Post {
   providers:[LocalCounterService]
 })
 export class AppComponent {
+  
+
   title = 'pipeless';
   search: string = '';
   searchField:string = 'title'
@@ -50,14 +55,13 @@ export class AppComponent {
     {title:'Routing',text:'about decorator angular'},
   ]
 
-  constructor( public appCounterService: AppCounterService,public localCounterService:LocalCounterService){
+  constructor(public appCounterService: AppCounterService,public localCounterService:LocalCounterService){
 
   }
 
-  addPost(){
-    this.posts.unshift({
-      title:'Angular 11',
-      text:'angular about framework'
-    })
-  }
+  
+
+      
+  
+  
 }

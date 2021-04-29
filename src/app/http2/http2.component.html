@@ -1,0 +1,23 @@
+<div class="container">
+    <h2>Angular HttpClient</h2>
+
+    <div class="card">
+        <div class="form-control">
+            <input type="text" placeholder="Название">
+        </div>
+        <button class="btn">Добавить</button>
+        <button class="btn">Загрузить</button>
+    </div>
+
+    <hr>
+
+    <div class="card" *ngFor="let todo of todos">
+        <p>
+            <span  [class.completed]='todo.completed'>{{todo.title}}</span>
+            <span>
+                <button class="btn btn-danger">Удалить</button>
+                <button class="btn" [disabled]='todo.completed' (click)='onToggleTodo()'>Завершить</button>
+            </span>
+        </p>
+    </div>
+</div>
