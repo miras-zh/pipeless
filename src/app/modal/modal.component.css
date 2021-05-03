@@ -1,0 +1,23 @@
+.backdrop{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: rgba(0, 0,0, .3);
+}
+
+.modal{
+    padding: 15px;
+    background: #fff;
+    margin-top: 10%;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%,0);
+}
+.modal h1{
+    font-size: 26px;
+}
+.modal h4 {
+    text-align: left;
+}

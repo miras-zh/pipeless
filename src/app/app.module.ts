@@ -21,6 +21,7 @@ import { ErrorPageComponent } from './error-page/error-page.component';
 
 import { AboutPageModule } from './about/about-page.module';
 import { SharedModule } from './shared/shared.module';
+import { ModalComponent } from './modal/modal.component';
 
 
 
@@ -38,7 +39,8 @@ import { SharedModule } from './shared/shared.module';
     HomeComponent,
     PostComponent,
     PostsComponent,
-    ErrorPageComponent
+    ErrorPageComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,

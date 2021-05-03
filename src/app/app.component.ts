@@ -19,7 +19,7 @@ export interface Post {
   providers:[LocalCounterService]
 })
 export class AppComponent {
-  
+  modal = false;
 
   title = 'pipeless';
   search: string = '';
