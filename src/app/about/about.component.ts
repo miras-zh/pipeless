@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./about.component.css']
 })
 export class AboutComponent implements OnInit {
-
+  toggleParagraph:boolean = false;
   constructor() { }
 
   ngOnInit(): void {

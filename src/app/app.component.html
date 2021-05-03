@@ -6,8 +6,14 @@
         <li routerLinkActive="active"><a routerLink="posts">Posts</a></li>
         <li routerLinkActive="active"><a routerLink="http">Задачник</a></li>
     </ul>
+    <div class="login">
+        <button class="btn" (click)="auth.login()">Login</button>
+        <button class="btn" (click)="auth.logout()">Logout</button>
+    </div>
 </nav>
 <hr>
-<router-outlet></router-outlet>
+<div class="container">
+    <router-outlet></router-outlet>
+</div>
 <!-- <app-http2></app-http2> -->
 

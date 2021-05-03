@@ -105,13 +105,13 @@ btn:hover {
 }
 
 .complete {
-  background-color: #666;
+  background-color: rgb(158, 158, 158);
   color: #000;
   min-width: 123px
 }
 
 .btn.btn-danger.completeremove {
-  background-color: #666;
+  background-color: rgb(158, 158, 158);
   color: #000;
   font-size: 16px;
   position: relative;

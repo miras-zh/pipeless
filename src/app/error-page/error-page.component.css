@@ -1,0 +1,15 @@
+.errorpage{
+    color: darkred;
+    margin-bottom: 50px;
+}
+
+.error-container{
+    display: flex;
+    margin: 5% 40%;
+    width: 350px;
+}
+
+.img-error{
+    width: auto;
+
+}

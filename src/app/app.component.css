@@ -21,3 +21,16 @@ a {
     font-size: 25px;
     font-weight: 500;
 }
+
+.login{
+    margin-left: 20px;
+    padding-left: 20px;
+}
+
+.login .btn{
+    margin-left: 10px;
+}
+
+.navbar .login{
+    margin-left: 20px;
+}

@@ -12,11 +12,17 @@ import { CounterComponent } from './counter/counter.component';
 import { HttpComponent } from './http/http.component';
 import { HttpClientModule }   from '@angular/common/http';
 import { Http2Component } from './http2/http2.component';
-import { AboutComponent } from './about/about.component';
-import { AboutExtraComponent } from './about-extra/about-extra.component';
+// import { AboutComponent } from './about/about.component';
+// import { AboutExtraComponent } from './about/about-extra/about-extra.component';
 import { HomeComponent } from './home/home.component';
 import { PostComponent } from './post/post.component';
 import { PostsComponent } from './posts/posts.component';
+import { ErrorPageComponent } from './error-page/error-page.component';
+
+import { AboutPageModule } from './about/about-page.module';
+import { SharedModule } from './shared/shared.module';
+
+
 
 @NgModule({
   declarations: [
@@ -27,18 +33,21 @@ import { PostsComponent } from './posts/posts.component';
     CounterComponent,
     HttpComponent,
     Http2Component,
-    AboutComponent,
-    AboutExtraComponent,
+    // AboutComponent,
+    // AboutExtraComponent,
     HomeComponent,
     PostComponent,
-    PostsComponent
+    PostsComponent,
+    ErrorPageComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AboutPageModule,
+    SharedModule
   ],
   providers: [
   ],

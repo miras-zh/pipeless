@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { logging } from 'selenium-webdriver';
+import { AuthService } from './auth.service';
 import { AppCounterService } from './services/app-counter.services';
 import { LocalCounterService } from './services/local-counter.service';
 
@@ -55,7 +57,12 @@ export class AppComponent {
     {title:'Routing',text:'about decorator angular'},
   ]
 
-  constructor(public appCounterService: AppCounterService,public localCounterService:LocalCounterService){
+  constructor(public appCounterService: AppCounterService,public localCounterService:LocalCounterService,
+    public auth:AuthService){
+
+      // login(){
+      //   this.auth.login();
+      // }
 
   }
 

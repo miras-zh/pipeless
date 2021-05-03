@@ -16,7 +16,7 @@
             <div class="card" *ngFor="let todo of todos">
                 <p>
                     <span class="todoId">{{todo.id}}</span>
-                    <span [class.completed]="todo.completed">{{todo.title | titlecase}}</span>
+                    <span class="textTodo" [class.completed]="todo.completed">{{todo.title | titlecase}}</span>
                     <span>
                         <button class="btn btn-danger" (click)="removeTodo(todo.id!)" [class.completeremove]="todo.completed">
                             <span *ngIf='!todo.completed'>Удалить</span>
