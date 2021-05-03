@@ -60,9 +60,6 @@ export class AppComponent {
   constructor(public appCounterService: AppCounterService,public localCounterService:LocalCounterService,
     public auth:AuthService){
 
-      // login(){
-      //   this.auth.login();
-      // }
 
   }
 

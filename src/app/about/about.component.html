@@ -1,7 +1,7 @@
 <div class="card">
     <h2>About</h2>
 
-<a [routerLink]="['/about','extra']" (click)='toggleParagraph = !toggleParagraph'>
+<a [routerLink]="['about','extra']" (click)='toggleParagraph = !toggleParagraph'>
     <span *ngIf="!toggleParagraph">Show Extra</span> 
     <span *ngIf="toggleParagraph">Hide</span>
 </a>

@@ -16,15 +16,13 @@ import { AboutComponent } from "./about.component";
         SharedModule,
         CommonModule,
         RouterModule.forChild([
-            {
-                path: 'about', component: AboutComponent, children: [
+            {path: 'about', component: AboutComponent, children: [
                     { path: 'extra', component: AboutExtraComponent }
-                ]
-            },
+                ]},
         ])
     ],
     exports: [
-        RouterModule
+        RouterModule,
     ]
 })
 export class AboutPageModule {
