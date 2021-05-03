@@ -17,7 +17,7 @@ import { AboutComponent } from "./about.component";
         CommonModule,
         RouterModule.forChild([
             {
-                path: 'about', component: AboutComponent, canActivateChild: [AuthGuard], children: [
+                path: 'about', component: AboutComponent, children: [
                     { path: 'extra', component: AboutExtraComponent }
                 ]
             },

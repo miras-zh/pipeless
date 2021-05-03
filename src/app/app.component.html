@@ -7,8 +7,8 @@
         <li routerLinkActive="active"><a routerLink="http">Задачник</a></li>
     </ul>
     <div class="login">
-        <button class="btn" (click)="auth.login()">Login</button>
-        <button class="btn" (click)="auth.logout()">Logout</button>
+        <button class="btn" (click)="auth.login()" [disabled]="auth.isAuth">Login</button>
+        <button class="btn" (click)="auth.logout()" [disabled]="!auth.isAuth">Logout</button>
     </div>
 </nav>
 <hr>
