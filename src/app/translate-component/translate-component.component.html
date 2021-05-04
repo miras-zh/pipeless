@@ -1,5 +1,8 @@
 <ng-container *transloco="let t">
   <h1> {{ t("hello") }} </h1>
+  <div class="card">
+    <p>{{t("post")}}</p>
+  </div>
   <hr>
   <button class="btnLkz" id="kz" (click)="setActiveLang('kz')">kz</button>
   <button class="btnLkz" id="ru" (click)="setActiveLang('ru')">ru</button>
