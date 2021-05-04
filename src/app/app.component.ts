@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { logging } from 'selenium-webdriver';
 import { AuthService } from './auth.service';
+import { DataLogin } from './modal/modal.component';
 import { AppCounterService } from './services/app-counter.services';
 import { LocalCounterService } from './services/local-counter.service';
 
@@ -19,9 +20,11 @@ export interface Post {
   providers:[LocalCounterService]
 })
 export class AppComponent {
-  modal = false;
+  modal:boolean = false;
+  nameUser: string = '';
+  dataLogin!:DataLogin;
 
-  title = 'pipeless';
+  title:string = 'pipeless';
   search: string = '';
   searchField:string = 'title'
 
@@ -63,9 +66,15 @@ export class AppComponent {
 
   }
 
-  
+  addName(dataModal:DataLogin){
+    console.log('данные получены с modal')
+    this.nameUser = dataModal.name;
+    this.modal = false;
+  }  
 
-      
+  closeModal(closeStatus:boolean){
+    if(closeStatus){this.modal = false}
+  }
   
   
 }

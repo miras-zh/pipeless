@@ -8,7 +8,8 @@
     </nav>
     <br>
     <h4>Имя</h4>
-    <input type="text" placeholder="Введите имя">
+    <input type="text" placeholder="Введите имя" [(ngModel)]='nameUser'>
     <p>Lorem ipsum dolor sit amet.</p>
-    <button class="btn" (click)="close.emit()">Войти</button>
+    <button class="btn" (click)="login()">Войти</button>
+    <button class="btn" (click)="close()">Отмена</button>
 </div>

@@ -34,3 +34,12 @@ a {
 .navbar .login{
     margin-left: 20px;
 }
+.name{
+    margin-left: 25px;
+}
+.name span{
+    margin-left: 5px;
+    font-size: 20px;
+    color: rgb(212, 81, 81);
+    font-weight: 500;
+}

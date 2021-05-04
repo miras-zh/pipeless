@@ -1,6 +1,5 @@
-
 <nav class="navbar">
-    
+
     <h1><a routerLink=""> Navigation</a></h1>
     <ul>
         <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"><a routerLink="">Home</a></li>
@@ -11,7 +10,12 @@
     <div class="login">
         <button class="btn" (click)="auth.login(); modal = true" [disabled]="auth.isAuth">Login</button>
         <button class="btn" (click)="auth.logout()" [disabled]="!auth.isAuth">Logout</button>
-        <app-modal title='Авторизация'  (close)="modal = false" *ngIf="modal"></app-modal>
+        <app-modal title='Авторизация' (onAddName)='addName($event)' (onClose)="closeModal($event)" *ngIf="modal"></app-modal>
+    </div>
+    <div class="name">
+     Пользователь: 
+     <span *ngIf="!auth.isAuth">Неавторизован</span>   
+     <span *ngIf="auth.isAuth">{{nameUser}}</span>   
     </div>
 </nav>
 <hr>
@@ -20,4 +24,3 @@
 </div>
 
 <!-- <app-http2></app-http2> -->
-
