@@ -9,6 +9,7 @@ import { HttpComponent } from './http/http.component';
 import { PostResolver } from './post.resolver';
 import { PostComponent } from './post/post.component';
 import { PostsComponent } from './posts/posts.component';
+import { TranslateComponentComponent } from './translate-component/translate-component.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -22,6 +23,7 @@ const routes: Routes = [
   },
   { path: 'http', component: HttpComponent },
   { path: 'error', component: ErrorPageComponent },
+  { path: 'localize', component: TranslateComponentComponent},
   { path: '**', redirectTo: '/error' }
 ];
 

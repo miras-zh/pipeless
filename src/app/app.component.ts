@@ -73,7 +73,9 @@ export class AppComponent {
   }  
 
   closeModal(closeStatus:boolean){
-    if(closeStatus){this.modal = false}
+    if(closeStatus){this.modal = false;
+    
+    }
   }
   
   

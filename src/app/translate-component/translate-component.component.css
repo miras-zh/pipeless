@@ -1,0 +1,20 @@
+.btnLkz{
+    width: 80px;
+    height: 40px;
+    margin-left: 30px;
+    font-size: 24px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.btnLkz:hover{
+    background: rgb(112, 169, 255);
+    color: white;
+    border:2px solid #ff9925
+}
+
+.btnLkz:active{
+    font-size: 26px;
+    font-weight: 700;
+    border:3px solid #ffffff
+}

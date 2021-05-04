@@ -1,0 +1,4 @@
+{
+    "hello":"Салем",
+    "dynamic": "transloco {{value}}"
+}

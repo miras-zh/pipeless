@@ -22,6 +22,9 @@ import { ErrorPageComponent } from './error-page/error-page.component';
 import { AboutPageModule } from './about/about-page.module';
 import { SharedModule } from './shared/shared.module';
 import { ModalComponent } from './modal/modal.component';
+import { TranslocoRootModule } from './transloco/transloco-root.module';
+import { TranslateComponentComponent } from './translate-component/translate-component.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 
@@ -40,7 +43,8 @@ import { ModalComponent } from './modal/modal.component';
     PostComponent,
     PostsComponent,
     ErrorPageComponent,
-    ModalComponent
+    ModalComponent,
+    TranslateComponentComponent
   ],
   imports: [
     BrowserModule,
@@ -49,7 +53,9 @@ import { ModalComponent } from './modal/modal.component';
     ReactiveFormsModule,
     HttpClientModule,
     AboutPageModule,
-    SharedModule
+    SharedModule,
+    TranslocoRootModule,
+    NgbModule
   ],
   providers: [
   ],

@@ -6,6 +6,7 @@
         <li routerLinkActive="active"><a routerLink="about">About</a></li>
         <li routerLinkActive="active"><a routerLink="posts">Posts</a></li>
         <li routerLinkActive="active"><a routerLink="http">Задачник</a></li>
+        <li routerLinkActive="active"><a routerLink="localize">Локализация</a></li>
     </ul>
     <div class="login">
         <button class="btn" (click)="auth.login(); modal = true" [disabled]="auth.isAuth">Login</button>
@@ -13,7 +14,10 @@
         <app-modal title='Авторизация' (onAddName)='addName($event)' (onClose)="closeModal($event)" *ngIf="modal"></app-modal>
     </div>
     <div class="name">
-     Пользователь: 
+        <ng-container *transloco>
+            Пользователь: {{"hello"| transloco}}
+        </ng-container>
+     
      <span *ngIf="!auth.isAuth">Неавторизован</span>   
      <span *ngIf="auth.isAuth">{{nameUser}}</span>   
     </div>
