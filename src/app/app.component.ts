@@ -4,7 +4,7 @@ import { AuthService } from './auth.service';
 import { DataLogin } from './modal/modal.component';
 import { AppCounterService } from './services/app-counter.services';
 import { LocalCounterService } from './services/local-counter.service';
-
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 
 export interface Post {
   title:string,

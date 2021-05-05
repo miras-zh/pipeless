@@ -8,12 +8,13 @@ a {
     text-align: center;
     margin-left: 5%;
     margin-top: 10px;
+    position: relative;
 }
 
 .navbar ul{
     display: flex;
     justify-content: space-between;
-    margin-left: 20%;
+    margin-left: 15%;
 }
 
 .navbar ul li{
@@ -42,4 +43,8 @@ a {
     font-size: 20px;
     color: rgb(212, 81, 81);
     font-weight: 500;
+}
+
+.modalWindow {
+    position: static;
 }

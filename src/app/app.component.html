@@ -2,29 +2,34 @@
 
     <h1><a routerLink=""> Navigation</a></h1>
     <ul>
-        <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"><a routerLink="">Home</a></li>
-        <li routerLinkActive="active"><a routerLink="about">About</a></li>
-        <li routerLinkActive="active"><a routerLink="posts">Posts</a></li>
-        <li routerLinkActive="active"><a routerLink="http">Задачник</a></li>
-        <li routerLinkActive="active"><a routerLink="localize">Локализация</a></li>
+        
+
+        <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"><a routerLink="">{{'navigation.home'|transloco}}</a></li>
+        <li routerLinkActive="active"><a routerLink="about">{{'navigation.about'|transloco}}</a></li>
+        <li routerLinkActive="active"><a routerLink="posts">{{'navigation.post'|transloco}}</a></li>
+        <li routerLinkActive="active"><a routerLink="http">{{'navigation.todo'|transloco}}</a></li>
+        <li routerLinkActive="active"><a routerLink="localize">{{'navigation.translate'|transloco}}</a></li>
     </ul>
+    
     <div class="login">
-        <button class="btn" (click)="auth.login(); modal = true" [disabled]="auth.isAuth">Login</button>
-        <button class="btn" (click)="auth.logout()" [disabled]="!auth.isAuth">Logout</button>
-        <app-modal title='Авторизация' (onAddName)='addName($event)' (onClose)="closeModal($event)" *ngIf="modal"></app-modal>
+        <button class="btn btnlogin" (click)="auth.login(); modal = true" [disabled]="auth.isAuth">{{'authorization.login'| transloco}}</button>
+        <button class="btn btnlogin" (click)="auth.logout()" [disabled]="!auth.isAuth">{{'authorization.logout'| transloco}}</button>
+        
     </div>
     <div class="name">
-        <ng-container *transloco>
-            Пользователь: {{"hello"| transloco}}
-        </ng-container>
-     
-     <span *ngIf="!auth.isAuth">Неавторизован</span>   
-     <span *ngIf="auth.isAuth">{{nameUser}}</span>   
+           {{'user'|transloco}}
+        <span *ngIf="!auth.isAuth">{{'userAuth'|transloco}}</span>
+        <span *ngIf="auth.isAuth">
+            <ng-container *transloco>
+                {{"hello"| transloco}}!,
+            </ng-container>{{nameUser}}
+        </span>
     </div>
 </nav>
 <hr>
 <div class="container">
     <router-outlet></router-outlet>
 </div>
-
+<app-modal class="modalWindow" title='Авторизация' (onAddName)='addName($event)' (onClose)="closeModal($event)" *ngIf="modal">
+</app-modal>
 <!-- <app-http2></app-http2> -->

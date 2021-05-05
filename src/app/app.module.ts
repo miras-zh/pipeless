@@ -25,7 +25,7 @@ import { ModalComponent } from './modal/modal.component';
 import { TranslocoRootModule } from './transloco/transloco-root.module';
 import { TranslateComponentComponent } from './translate-component/translate-component.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -55,7 +55,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     AboutPageModule,
     SharedModule,
     TranslocoRootModule,
-    NgbModule
+    NgbModule,
+    BrowserAnimationsModule
   ],
   providers: [
   ],
