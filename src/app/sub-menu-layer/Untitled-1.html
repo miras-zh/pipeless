@@ -1,0 +1,36 @@
+<!-- ТЕМАТИЧЕСКИЕ КАРТЫ -->
+<mat-expansion-panel>
+
+    <mat-expansion-panel-header class="main-accordion">
+      <mat-panel-title>
+        <div class="m-menu" fxLayoutAlign="center center">
+          <img src="../../../assets/icons/menu_tem_map.svg">
+        </div>
+        <span class="m-menu-title" [translate]="'menu.thematicMap'">ТЕМАТИЧЕСКИЕ КАРТЫ</span>
+      </mat-panel-title>
+      <mat-panel-description>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <mat-accordion class="inner-accordion">
+      <div class="mat-elevation-z4" *ngFor=" let layerTheme of layerThemes; let i=index">
+        <mat-expansion-panel *ngIf="checkForUnwanted(layerTheme)">
+
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <img *ngIf="layerTheme.iconImage; else defaultImgIcon" [src]="layerTheme.iconImage" alt="">
+              <ng-template #defaultImgIcon>
+                <img src="/assets/images/fallback.svg" alt="">
+              </ng-template>
+              <span class="menu-title" *ngIf="siteSettings.language===1"> {{ layerTheme?.nameRu }}</span>
+              <span class="menu-title" *ngIf="siteSettings.language===2"> {{ layerTheme?.nameEn }}</span>
+              <span class="menu-title" *ngIf="siteSettings.language===3"> {{ layerTheme?.nameKk }}</span>
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+
+          <app-layer-groups [themeId]="layerTheme?.id"></app-layer-groups>
+        </mat-expansion-panel>
+      </div>
+    </mat-accordion>
+
+  </mat-expansion-panel>

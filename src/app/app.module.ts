@@ -25,8 +25,14 @@ import { ModalComponent } from './modal/modal.component';
 import { TranslocoRootModule } from './transloco/transloco-root.module';
 import { TranslateComponentComponent } from './translate-component/translate-component.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+//Material
+import {MatExpansionModule} from '@angular/material/expansion';
+import {MatIconModule} from '@angular/material/icon';
 
-
+import { SubMenuComponent } from './sub-menu/sub-menu.component';
+import { SubMenuLayerComponent } from './sub-menu-layer/sub-menu-layer.component';
+import { MaterialModule } from './shared/material.module';
 
 @NgModule({
   declarations: [
@@ -44,7 +50,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     PostsComponent,
     ErrorPageComponent,
     ModalComponent,
-    TranslateComponentComponent
+    TranslateComponentComponent,
+    SubMenuComponent,
+    SubMenuLayerComponent
   ],
   imports: [
     BrowserModule,
@@ -55,7 +63,12 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     AboutPageModule,
     SharedModule,
     TranslocoRootModule,
-    NgbModule
+    NgbModule,
+    BrowserAnimationsModule,
+    MaterialModule
+  ],
+  exports:[
+    MaterialModule
   ],
   providers: [
   ],
