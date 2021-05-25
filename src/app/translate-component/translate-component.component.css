@@ -1,4 +1,4 @@
-.btnLkz{
+.btnLkz {
     width: 80px;
     height: 40px;
     margin-left: 30px;
@@ -7,14 +7,43 @@
     border-radius: 5px;
 }
 
-.btnLkz:hover{
+.btnLkz:hover {
     background: rgb(112, 169, 255);
     color: white;
-    border:2px solid #ff9925
+    border: 2px solid #ff9925
 }
 
-.btnLkz:active{
+.btnLkz:active {
     font-size: 26px;
     font-weight: 700;
-    border:3px solid #ffffff
+    border: 3px solid #ffffff
+}
+
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+}
+
+.example-full-width {
+    width: 100%;
+}
+
+.wrap{
+    margin-top: 40px;
+    padding-top: 40px;
+    width: 500px;
+    margin: 0 auto;
+}
+.wrap button{
+    margin-bottom: 50px;
+}
+.box{
+width: 250px;
+height: 250px;
+display: flex;
+align-items: center;
+justify-content: center;
+color: white;
+
 }

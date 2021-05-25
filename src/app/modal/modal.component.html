@@ -1,15 +1,16 @@
-<div class="backdrop">
+<div>
+    <div class="backdrop">
 
-</div>
-
-<div class="modal">
-    <nav class='navbar'>
-        <h1>{{title}}</h1>
-    </nav>
-    <br>
-    <h4>Имя</h4>
-    <input type="text" placeholder="Введите имя" [(ngModel)]='nameUser'>
-    <hr>
-    <button class="btn" (click)="login()">Войти</button>
-    <button class="btn" (click)="close()">Отмена</button>
+    </div>
+    <div class="modal">
+        <nav class='navbar'>
+            <h1>{{title}}</h1>
+        </nav>
+        <br>
+        <h4>Имя</h4>
+        <input type="text" placeholder="Введите имя" [(ngModel)]='nameUser'>
+        <hr>
+        <button class="btn" (click)="login()">Войти</button>
+        <button class="btn" (click)="close()">Отмена</button>
+    </div>
 </div>

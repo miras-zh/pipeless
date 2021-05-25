@@ -1,3 +1,6 @@
+<ng-template appRef>  
+
+</ng-template>
 <nav class="navbar">
 
     <h1><a routerLink=""> Navigation</a></h1>
@@ -12,7 +15,7 @@
     </ul>
     
     <div class="login">
-        <button class="btn btnlogin" (click)="auth.login(); modal = true" [disabled]="auth.isAuth">{{'authorization.login'| transloco}}</button>
+        <button class="btn btnlogin" (click)="auth.login();showModal(); modal = true" [disabled]="auth.isAuth">{{'authorization.login'| transloco}}</button>
         <button class="btn btnlogin" (click)="auth.logout()" [disabled]="!auth.isAuth">{{'authorization.logout'| transloco}}</button>
         
     </div>
@@ -30,6 +33,6 @@
 <div class="container">
     <router-outlet></router-outlet>
 </div>
-<app-modal class="modalWindow" title='Авторизация' (onAddName)='addName($event)' (onClose)="closeModal($event)" *ngIf="modal">
-</app-modal>
+<!-- <app-modal title='Авторизация' (onAddName)='addName($event)' (onClose)="closeModal($event)" *ngIf="modal"> -->
+<!-- </app-modal> -->
 <!-- <app-http2></app-http2> -->

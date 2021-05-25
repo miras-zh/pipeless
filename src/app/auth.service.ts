@@ -9,7 +9,8 @@ export class AuthService {
 
     login() {
         this.isAuth = true;
-        console.log('login')
+        console.log('login');
+        
     }
 
     logout() {

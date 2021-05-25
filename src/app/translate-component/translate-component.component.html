@@ -9,3 +9,36 @@
 </ng-container>
 <br>
 <hr>
+<mat-slider min="1" max="100" step="1" value="1"></mat-slider>
+<hr>
+<form class="example-form">
+  <mat-form-field class="example-full-width">
+    <mat-label>Number</mat-label>
+    <input type="text"
+           placeholder="Pick one"
+           aria-label="Number"
+           matInput
+           [formControl]="myControl"
+           [matAutocomplete]="auto">
+    <mat-autocomplete #auto="matAutocomplete">
+      <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+        {{option}}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+</form>
+<h2>
+  Animate component here
+</h2>
+<app-animate></app-animate>
+<div class="wrap">
+  <button class="btn btn-primary" (click)='visible = !visible'>visble</button>
+  <button class="btn btn-primary" (click)='animate()'>Animation  </button>
+  <button class="btn btn-primary" (click)="boxState = 'special' ">Animation Spec  </button>
+ <hr>
+  <div class="box" [@box]='boxState' *ngIf="visible">
+    <h2>{{boxState| uppercase}}</h2>
+  </div>
+  <hr>
+</div>
+

@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ComponentFactoryResolver, OnInit, ViewChild } from '@angular/core';
 import { logging } from 'selenium-webdriver';
 import { AuthService } from './auth.service';
-import { DataLogin } from './modal/modal.component';
+import { DataLogin, ModalComponent } from './modal/modal.component';
 import { AppCounterService } from './services/app-counter.services';
 import { LocalCounterService } from './services/local-counter.service';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import { RefDirective } from './ref.directive';
 
 export interface Post {
   title:string,
@@ -20,6 +21,8 @@ export interface Post {
   providers:[LocalCounterService]
 })
 export class AppComponent {
+@ViewChild(RefDirective,{static:false}) refDir!:RefDirective;
+
   modal:boolean = false;
   nameUser: string = '';
   dataLogin!:DataLogin;
@@ -61,9 +64,15 @@ export class AppComponent {
   ]
 
   constructor(public appCounterService: AppCounterService,public localCounterService:LocalCounterService,
-    public auth:AuthService){
+    public auth:AuthService, public resolver:ComponentFactoryResolver){
 
 
+  }
+
+  showModal(){
+    const  modalFactory = this.resolver.resolveComponentFactory(ModalComponent);
+    this.refDir.containerRef.clear();
+    this.refDir.containerRef.createComponent(modalFactory)
   }
 
   addName(dataModal:DataLogin){
@@ -74,7 +83,7 @@ export class AppComponent {
 
   closeModal(closeStatus:boolean){
     if(closeStatus){this.modal = false;
-    
+      
     }
   }
   

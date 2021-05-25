@@ -25,8 +25,14 @@ import { ModalComponent } from './modal/modal.component';
 import { TranslocoRootModule } from './transloco/transloco-root.module';
 import { TranslateComponentComponent } from './translate-component/translate-component.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+//material
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import { MatSliderModule } from '@angular/material/slider';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { RefDirective } from './ref.directive';
+import { AnimateComponent } from './animate/animate.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +50,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     PostsComponent,
     ErrorPageComponent,
     ModalComponent,
-    TranslateComponentComponent
+    TranslateComponentComponent,
+    RefDirective,
+    AnimateComponent
   ],
   imports: [
     BrowserModule,
@@ -56,10 +64,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     SharedModule,
     TranslocoRootModule,
     NgbModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatSliderModule,
+    MatAutocompleteModule,
+    MatFormFieldModule
   ],
   providers: [
   ],
+  entryComponents:[ModalComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
