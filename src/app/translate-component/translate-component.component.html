@@ -1,53 +1,53 @@
 <hr>
-<div class="accord">
-  <mat-accordion >
-    <mat-expansion-panel>
-      <mat-expansion-panel-header>
-        <mat-panel-title>
-          <div>
-            <img src="../../../assets/icons/menu_zem_torgi.svg">
-          </div>
-          <span >Panel Title</span>
-        </mat-panel-title>
-       
-        <mat-panel-description>
-        </mat-panel-description>
-      </mat-expansion-panel-header>
-      <app-sub-menu></app-sub-menu>
-    </mat-expansion-panel>
+<h2>Mat Menu</h2>
+<mat-menu #appMenu="matMenu">
+  <button mat-menu-item>Front</button>
+  <button mat-menu-item>Back</button>
+</mat-menu>
+<button mat-flat-button [matMenuTriggerFor]="appMenu">Menu</button>
 
-    <mat-expansion-panel>
-      <mat-expansion-panel-header>
-        <mat-panel-title>
-          <div>
-            <img src="../../../assets/icons/menu_zem_torgi.svg">
-          </div>
-          <span >Panel Title</span>
-        </mat-panel-title>
-       
-        <mat-panel-description>
-        </mat-panel-description>
-      </mat-expansion-panel-header>
-      <app-sub-menu></app-sub-menu>
-    </mat-expansion-panel>
-    
-    <mat-expansion-panel>
-      <mat-expansion-panel-header>
-        <mat-panel-title>
-          <div>
-            <img src="../../../assets/icons/menu_zem_torgi.svg">
-          </div>
-          <span >Panel Title</span>
-        </mat-panel-title>
-       
-        <mat-panel-description>
-        </mat-panel-description>
-      </mat-expansion-panel-header>
-      <app-sub-menu></app-sub-menu>
-    </mat-expansion-panel>
-  </mat-accordion>
-</div>
+<mat-menu #carMenu="matMenu">
+  <button mat-menu-item [matMenuTriggerFor]="subMenu">BMW</button>
+  <button mat-menu-item>MERC</button>
+  <button mat-menu-item>AUDI</button>
+  <button mat-menu-item>PORSHE</button>
+</mat-menu>
+<button mat-flat-button [matMenuTriggerFor]="carMenu">Car</button>
+
+<mat-menu #subMenu="matMenu">
+  <button mat-menu-item>X5</button>
+  <button mat-menu-item>X6</button>
+  <button mat-menu-item>X7</button>
+  <button mat-menu-item>E36</button>
+  <button mat-menu-item>E39</button>
+</mat-menu>
+<button mat-flat-button [matMenuTriggerFor]="carMenu">Menu1</button>
+<button mat-flat-button [matMenuTriggerFor]="carMenu">Menu2</button>
+<button mat-flat-button [matMenuTriggerFor]="carMenu">Menu3</button>
+<button mat-flat-button [matMenuTriggerFor]="carMenu">Menu4</button>
+
+
+<!-- ***************************************************************** -->
 <hr>
+<mat-sidenav-container>
+  <mat-sidenav #sidenav mode="push" (closed)="log('closed')" (opened)="log('opened')" [(opened)]="opened">Sidenav</mat-sidenav>
+  <mat-sidenav-content>Main
+    <button (click)="opened=!opened" style="border: none;background-color: grey;color: honeydew;">toggle</button>
+    <button (click)="sidenav.open()">Open</button>
+    <button (click)="sidenav.close()">Close</button>
+    <button (click)="sidenav.toggle()">Toggle</button>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+<hr>
+  <mat-toolbar color="primary" class="navbar">
+    <span class="logo">Toolbar</span>
+    <div class="menu">
+      <span>Home</span>
+      <span>About</span>
+      <span>Map</span>
+    </div>
+  </mat-toolbar>
+<hr> <!-- ``````````````````````````````````````````````````````````` -->
 <ng-container *transloco="let t">
   <h1> {{ t("hello") }} </h1>
   <div class="card">
@@ -58,3 +58,296 @@
   <button class="btnLkz" id="ru" (click)="setActiveLang('ru')">ru</button>
 </ng-container>
 <br>
+<!--container content-->
+<hr>
+<!-- <mat-form-field appearance="legacy">
+    <mat-label>Legacy form field</mat-label>
+    <input matInput placeholder="Placeholder">
+    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+    <mat-hint>Hint</mat-hint>
+  </mat-form-field> -->
+<mat-tab-group>
+  <mat-tab label="Tolbar">
+    <h1>toolbar</h1>
+    <div>
+      <mat-toolbar color="primary">
+        <span>codevolution</span>
+      </mat-toolbar>
+    </div>
+  </mat-tab>
+  <mat-tab label="Button ">
+    <div>
+
+      <h1>Material tets</h1>
+      <h2>button</h2>
+      <section>
+        <div class="example-label">Basic</div>
+        <div class="example-button-row">
+          <button mat-button>Basic</button>
+          <button mat-button color="primary">Primary</button>
+          <button mat-button color="accent">Accent</button>
+          <button mat-button color="warn">Warn</button>
+          <button mat-button disabled>Disabled</button>
+          <a mat-button href="https://www.google.com/" target="_blank">Link</a>
+        </div>
+      </section>
+      <section>
+        <div class="example-label">Raised</div>
+        <div class="example-button-row">
+          <button mat-raised-button>Basic</button>
+          <button mat-raised-button color="primary">Primary</button>
+          <button mat-raised-button color="accent">Accent</button>
+          <button mat-raised-button color="warn">Warn</button>
+          <button mat-raised-button disabled>Disabled</button>
+          <a mat-raised-button href="https://www.google.com/" target="_blank">Link</a>
+        </div>
+      </section>
+      <section>
+        <div class="example-label">Stroked</div>
+        <div class="example-button-row">
+          <button mat-stroked-button>Basic</button>
+          <button mat-stroked-button color="primary">Primary</button>
+          <button mat-stroked-button color="accent">Accent</button>
+          <button mat-stroked-button color="warn">Warn</button>
+          <button mat-stroked-button disabled>Disabled</button>
+          <a mat-stroked-button href="https://www.google.com/" target="_blank">Link</a>
+        </div>
+      </section>
+      <section>
+        <div class="example-label">Flat</div>
+        <div class="example-button-row">
+          <button mat-flat-button>Basic</button>
+          <button mat-flat-button color="primary">Primary</button>
+          <button mat-flat-button color="accent">Accent</button>
+          <button mat-flat-button color="warn">Warn</button>
+          <button mat-flat-button disabled>Disabled</button>
+          <a mat-flat-button href="https://www.google.com/" target="_blank">Link</a>
+        </div>
+      </section>
+      <section>
+        <div class="example-label">Icon</div>
+        <div class="example-button-row">
+          <div class="example-flex-container">
+            <button mat-icon-button aria-label="Example icon button with a vertical three dot icon">
+              <mat-icon>more_vert</mat-icon>
+            </button>
+            <button mat-icon-button color="primary" aria-label="Example icon button with a home icon">
+              <mat-icon>home</mat-icon>
+            </button>
+            <button mat-icon-button color="accent" aria-label="Example icon button with a menu icon">
+              <mat-icon>menu</mat-icon>
+            </button>
+            <button mat-icon-button color="warn" aria-label="Example icon button with a heart icon">
+              <mat-icon>favorite</mat-icon>
+            </button>
+            <button mat-icon-button disabled aria-label="Example icon button with a open in new tab icon">
+              <mat-icon>open_in_new</mat-icon>
+            </button>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="example-label">FAB</div>
+        <div class="example-button-row">
+          <div class="example-flex-container">
+            <div class="example-button-container">
+              <button mat-fab color="primary" aria-label="Example icon button with a delete icon">
+                <mat-icon>delete</mat-icon>
+              </button>
+            </div>
+            <div class="example-button-container">
+              <button mat-fab color="accent" aria-label="Example icon button with a bookmark icon">
+                <mat-icon>bookmark</mat-icon>
+              </button>
+            </div>
+            <div class="example-button-container">
+              <button mat-fab color="warn" aria-label="Example icon button with a home icon">
+                <mat-icon>home</mat-icon>
+              </button>
+            </div>
+            <div class="example-button-container">
+              <button mat-fab disabled aria-label="Example icon button with a heart icon">
+                <mat-icon>favorite</mat-icon>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="example-label">Mini FAB</div>
+        <div class="example-button-row">
+          <div class="example-flex-container">
+            <div class="example-button-container">
+              <button mat-mini-fab color="primary" aria-label="Example icon button with a menu icon">
+                <mat-icon>menu</mat-icon>
+              </button>
+            </div>
+            <div class="example-button-container">
+              <button mat-mini-fab color="accent" aria-label="Example icon button with a plus one icon">
+                <mat-icon>plus_one</mat-icon>
+              </button>
+            </div>
+            <div class="example-button-container">
+              <button mat-mini-fab color="warn" aria-label="Example icon button with a filter list icon">
+                <mat-icon>filter_list</mat-icon>
+              </button>
+            </div>
+            <div class="example-button-container">
+              <button mat-mini-fab disabled aria-label="Example icon button with a home icon">
+                <mat-icon>home</mat-icon>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <hr>
+      <button mat-flat-button>click flat</button>
+      <button mat-raised-button>click raised</button>
+      <button mat-button>click</button>
+      <button mat-stroked-button>click stroked</button>
+
+      <div>
+        <button mat-icon-button>icon</button>
+        <button mat-fab>fab</button>
+        <button mat-mini-fab>mini fab</button>
+        <br>
+        <hr>
+        <button color="primary" mat-icon-button>Primary</button>
+        <button color="accent" mat-icon-button>Accent</button>
+        <button color="warn" mat-icon-button>Warn</button>
+
+        <button color="primary" mat-raised-button>Primary</button>
+        <button color="accent" mat-raised-button>Accent</button>
+        <button color="warn" mat-raised-button>Warn</button>
+        <button color="warn" disableRipple mat-button>disableRipple</button>
+
+        <button color="accent" mat-fab>fab</button>
+        <button color="warn" mat-mini-fab>mini fab</button>
+      </div>
+
+    </div>
+  </mat-tab>
+  <mat-tab label="Spiner">
+    <div>
+      <h1>Spiner</h1>
+      <div style="display:flex;justify-content: space-between;">
+        <mat-progress-spinner value="60"></mat-progress-spinner>
+        <mat-spinner *ngIf="showSpinner" color="accent"></mat-spinner>
+        <button (click)="loadDataforSpinner()">load data +</button>
+      </div>
+      <div style="display:flex;justify-content: space-between;">
+        <mat-progress-spinner [value]="val"></mat-progress-spinner>
+        <button (click)="count()">count{{val}}</button>
+      </div>
+
+    </div>
+  </mat-tab>
+  <mat-tab label="Typography">
+    <div>
+      <button mat-button>Material mat-button</button><br><br>
+      <button mat-raised-button>Material mat-raised-button</button><br>
+      <div class="mat-display-4">this is display 4</div>
+      <div class="mat-display-3">this is display 3</div>
+      <div class="mat-display-2">this is display 2</div>
+      <div class="mat-display-1">this is display 1</div>
+
+      <div class="mat-headline">Heading</div>
+      <div class="mat-title">mat title</div>
+      <div class="mat-subheading-2">subheading2</div>
+      <div class="mat-subheading-1">subheading1</div>
+
+      <div class="mat-body-1">body1</div>
+      <div class="mat-body-2">body2</div>
+      <div class="mat-caption">caption text</div>
+    </div>
+  </mat-tab>
+  <mat-tab label="Tabs">
+    <br>111<br>
+    <div>
+      <mat-tab-group>
+        <mat-tab label="вкладка1">
+          1
+        </mat-tab>
+        <mat-tab label="вкладка2">
+          2
+        </mat-tab>
+        <mat-tab label="вкладка3">
+          3
+        </mat-tab>
+        <mat-tab label="вкладка4">
+          4
+        </mat-tab>
+        <mat-tab label="вкладка5">
+          5
+        </mat-tab>
+      </mat-tab-group>
+    </div>
+  </mat-tab>
+  <mat-tab label="Button toggle">
+    <div>
+      <h1>Mat Button Toggle</h1>
+      <mat-button-toggle #toggleBtn checked>Toggle</mat-button-toggle>
+      {{toggleBtn.checked}}
+      <div>
+        <mat-button-toggle-group #toggleGroup="matButtonToggleGroup">
+          <mat-button-toggle value="angular">Angular</mat-button-toggle>
+          <mat-button-toggle value="react">React</mat-button-toggle>
+          <mat-button-toggle value="vue">Vue</mat-button-toggle>
+        </mat-button-toggle-group>
+        {{toggleGroup.value}}
+      </div>
+    </div>
+  </mat-tab>
+  <mat-tab label="MatIcon & Badge">
+    <div>
+      <h2>Icon test</h2>
+      <mat-icon color="primary">fingerprint</mat-icon>
+      <mat-icon class="mat-icon">language</mat-icon>
+      <mat-icon>
+        manage_accounts
+      </mat-icon>
+      <mat-icon></mat-icon>
+    </div>
+    <div>
+      <h1>Badge</h1>
+      <div class="badgee">
+        <span matBadge="5">Notification</span>
+      </div>
+      <div class="badgee">
+        <span matBadge="10" matBadgeSize="small">Notification</span>
+      </div>
+      <div class="badgee">
+        <span matBadge="10" matBadgeSize="medium">Notification</span>
+      </div>
+      <div class="badgee">
+        <span matBadge="10" matBadgeSize="large">Notification</span>
+      </div>
+
+      <div class="badgee">
+        <span matBadge="20" matBadgePosition="below before">Notification</span>
+      </div>
+      <div class="badgee">
+        <span matBadge="20" matBadgePosition="below after">Notification</span>
+      </div>
+      <div class="badgee">
+        <span matBadge="20" matBadgePosition="above before">Notification</span>
+      </div>
+      <hr>
+      <div class="badgee">
+        <span [matBadge]="notification" matBadgeColor="primary">Notification</span>
+      </div>
+      <div class="badgee">
+        <span matBadge="50" matBadgeColor="accent">Notification</span>
+      </div>
+      <div class="badgee">
+        <span matBadge="50" matBadgeColor="warn">Notification</span>
+      </div>
+
+    </div>
+  </mat-tab>
+
+  <mat-tab label="+">
+
+  </mat-tab>
+</mat-tab-group>

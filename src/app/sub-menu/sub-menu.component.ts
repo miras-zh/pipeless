@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-import {MatAccordion} from '@angular/material/expansion';
-
 @Component({
   selector: 'app-sub-menu',
   templateUrl: './sub-menu.component.html',
