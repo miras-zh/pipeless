@@ -1,6 +1,6 @@
 <hr>
 <h2>Mat Menu</h2>
-<mat-menu #appMenu="matMenu">
+<mat-menu #appMenu="matMenu" xPosition="after" ><!--[attribute] >yPosition="above" -->
   <button mat-menu-item>Front</button>
   <button mat-menu-item>Back</button>
 </mat-menu>
@@ -26,6 +26,16 @@
 <button mat-flat-button [matMenuTriggerFor]="carMenu">Menu3</button>
 <button mat-flat-button [matMenuTriggerFor]="carMenu">Menu4</button>
 
+<mat-menu #lazyMenu="matMenu">
+  <ng-template matMenuContent let-name="name" let-hobby="hobby">
+    <button mat-menu-item>Setting</button>
+    <button mat-menu-item>Log Out {{name}}</button>
+    <button mat-menu-item>Hobby is {{hobby}}</button>
+  </ng-template>
+</mat-menu>
+
+<button mat-raised-button [matMenuTriggerData]="{name:'Vish',hobby:'sport'}" [matMenuTriggerFor]="lazyMenu">Vishwas</button>
+<button mat-raised-button [matMenuTriggerData]="{name:'Code',hobby:'develop'}" [matMenuTriggerFor]="lazyMenu">Code</button>
 
 <!-- ***************************************************************** -->
 <hr>
