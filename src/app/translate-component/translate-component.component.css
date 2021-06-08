@@ -3,6 +3,14 @@ mat-sidenav-container{
   height: 300px;
 }
 
+mat-grid-tile{
+  background-color: #ff9925;
+}
+
+mat-icon{
+  cursor: pointer;
+}
+
 mat-sidenav, mat-sidenav-content{
   padding: 16px;
 }

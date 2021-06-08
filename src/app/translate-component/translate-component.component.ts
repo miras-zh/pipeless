@@ -22,9 +22,9 @@ export class TranslateComponentComponent implements OnInit {
   log(state:string){console.log(state); alert(state)}
 
   loadDataforSpinner(){
-    setTimeout(()=>{this.showSpinner = true},2000)
+    setTimeout(()=>{this.showSpinner = true},15000)
     // this.showSpinner = true;
-    setTimeout(()=>{this.showSpinner = false},5000)
+    setTimeout(()=>{this.showSpinner = false},3000)
   }
 
   setActiveLang(lang:string){
