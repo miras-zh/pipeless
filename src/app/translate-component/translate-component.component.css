@@ -14,8 +14,6 @@ mat-sidenav-container{
   height: 300px;
 }
 
-
-
 mat-icon{
   cursor: pointer;
 }
@@ -39,10 +37,10 @@ mat-sidenav{
   padding-left: 20px;
 }
 
-
 span.logo{
   margin-top: 20px;
 }
+
 .btnLkz{
     width: 80px;
     height: 40px;
@@ -135,4 +133,8 @@ button{
   }
   .badgee{
     margin-bottom: 40px;
+  }
+
+  table {
+    width: 100%;
   }

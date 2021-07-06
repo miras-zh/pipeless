@@ -26,6 +26,7 @@ import {MatNativeDateModule, MatRippleModule} from '@angular/material/core';//21
 import {MatTooltipModule}from '@angular/material/tooltip';//22
 import {MatSnackBarModule}from '@angular/material/snack-bar';//23
 import { MatDialogModule } from '@angular/material/dialog'; // 24
+import {MatTableModule} from '@angular/material/table'; // 25
 
 
 const MaterialComponents = [
@@ -36,7 +37,8 @@ const MaterialComponents = [
   MatExpansionModule,MatCardModule,MatStepperModule,
   MatInputModule,MatSelectModule,MatAutocompleteModule,
   MatCheckboxModule,MatRadioModule,MatDatepickerModule,MatNativeDateModule, MatRippleModule,
-  MatTooltipModule,MatSnackBarModule,MatDialogModule
+  MatTooltipModule,MatSnackBarModule,MatDialogModule,
+  MatTableModule
 ]
 
 @NgModule({
