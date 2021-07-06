@@ -1,11 +1,20 @@
+mat-grid-tile{
+  background-color: #cecece;
+}
+mat-grid-tile.check{
+  background-color: #b594f1;
+}
+
+.inputSet{
+  display: flex;
+  justify-content:space-around;
+}
 
 mat-sidenav-container{
   height: 300px;
 }
 
-mat-grid-tile{
-  background-color: #ff9925;
-}
+
 
 mat-icon{
   cursor: pointer;

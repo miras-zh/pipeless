@@ -1,15 +1,168 @@
-<h1>stepper</h1>
-<mat-horizontal-stepper linear>
-    <mat-step label="1" completed=true>1</mat-step>
-    <mat-step label="2" completed=true>2
-      <div>
-        <button mat-button matStepperPrevious>Back</button>
-        <button mat button matStepperNext>Next</button>
-      </div>
-    </mat-step>
-    <mat-step label="3" completed=false>3</mat-step>
-</mat-horizontal-stepper>
 
+
+<h2>MatDialog</h2>
+<button (click)="openDialog()" mat-raised-button>Open dialog</button>
+
+<!--******************************************************************* 17.06-->
+
+<h2>SnackBar</h2>
+
+<button mat-button (click)="openSnackBar('itemdeleted','Undo')">SnackBar</button>
+
+
+
+<!--******************************************************************* -->
+<h2>Tooltip</h2>
+  <button mat-raised-button 
+  matTooltip="Welcome to codevolution"
+  matTooltipPosition="before"
+  matTooltipShowDelay="1500"
+  matTooltipHideDelay="1500">
+    hi
+  </button>
+  <button mat-raised-button 
+  matTooltip="Welcome to codevolution"
+  matTooltipPosition="before"
+  matTooltipShowDelay='500'
+  matTooltipHideDelay="500">
+    hi
+  </button>
+<br>
+<!--******************************************************************* -->
+
+<h1>Datepicker</h1>
+
+<mat-form-field appearance="fill">
+  <mat-label>Choose a date</mat-label>
+  <input matInput [matDatepicker]="picker" [min]="minDate" [max]="maxDate">
+  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker #picker></mat-datepicker>
+</mat-form-field>
+<br>
+<mat-form-field>
+  <input matInput [matDatepicker]="myDatePicker" [matDatepickerFilter]="dateFilter">
+  <mat-datepicker-toggle matSuffix [for]="myDatePicker" ></mat-datepicker-toggle>
+  <mat-datepicker #myDatePicker startView="year"></mat-datepicker>
+</mat-form-field><br>
+<mat-form-field>
+  <input matInput [matDatepicker]="myDatePickerA">
+  <mat-datepicker-toggle matSuffix [for]="myDatePickerA" ></mat-datepicker-toggle>
+  <mat-datepicker #myDatePickerA startView="multi-year"></mat-datepicker>
+</mat-form-field>
+
+<!--******************************************************************* -->
+<mat-grid-list cols="2" rowHeight="300px">
+  <mat-grid-tile rowspan="2">
+    <div>
+      <h1>Checkbox-</h1>
+    <mat-checkbox>
+      Subscribe1
+    </mat-checkbox><br>
+    <mat-checkbox labelPosition='before'>
+      Subscribe2
+    </mat-checkbox><br>
+    <mat-checkbox color="primary">
+      Subscribe3
+    </mat-checkbox><br>
+    <mat-checkbox color="warn">
+      Subscribe4
+    </mat-checkbox><br>
+    </div>
+  </mat-grid-tile>
+  <mat-grid-tile rowspan="2">
+    <div>
+      <mat-radio-group color='primary'>
+        <mat-radio-button value="angular">Angular</mat-radio-button><br><br>
+        <mat-radio-button value="radio">React</mat-radio-button><br><br>
+        <mat-radio-button value="node">Node</mat-radio-button>
+      </mat-radio-group>
+    </div>
+  </mat-grid-tile>
+</mat-grid-list>
+
+<!--*******************************************************************11.06-->
+<div class="inputSet">
+  <div>
+    <h1>Autocomplete</h1>
+    <form action="">
+      <mat-form-field>
+        <input type="text" matInput [matAutocomplete]="auto" [formControl]="myControl">
+        <mat-autocomplete #auto="matAutocomplete">
+          <mat-option *ngFor="let option of options" [value]="option">
+            {{option}}
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+    </form>
+    <form action="">
+      <mat-form-field>
+        <input type="text" matInput [matAutocomplete]="obj">
+        <mat-autocomplete #obj="matAutocomplete" [displayWith]="displayFn">
+          <mat-option *ngFor="let option of objectOptions" [value]="option">
+            {{option.name}}
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+    </form>
+  </div>
+  <!--*******************************************************************09.06-->
+  <div>
+    <h1>select</h1>
+    <mat-form-field>
+      <mat-label>Topic</mat-label>
+      <mat-select [(value)]="selectedValue" multiple>
+        <mat-option>None</mat-option>
+        <mat-option value="angular">Angular</mat-option>
+        <mat-option value="react">React</mat-option>
+        <mat-option value="vue">Vue</mat-option>
+        <mat-optgroup label="Web">
+          <mat-option value="js">JS</mat-option>
+          <mat-option value="php">PHP</mat-option>
+          <mat-option value="html/css">HTML-CSS</mat-option>
+        </mat-optgroup>
+        <mat-optgroup label="Math">
+          <mat-option value="10">10</mat-option>
+          <mat-option value="20">20</mat-option>
+        </mat-optgroup>
+      </mat-select>
+    </mat-form-field>
+    {{selectedValue}}
+  </div>
+</div>
+<!--*******************************************************************08.06-->
+<h1>"Input"</h1>
+<mat-form-field floatLabel="auto" appearance="fill" color="accent">
+  <!--floatLabel="never" appearance="legacy"-->
+  <mat-label>Введите ФИО</mat-label>
+  <input matInput>
+  <mat-hint align="end">Фамилия Имя Отчество</mat-hint>
+</mat-form-field>
+<mat-form-field floatLabel="auto" appearance="outline" color="warn">
+  <!--floatLabel="never" appearance="standard"-->
+  <mat-label>Введите Адрес</mat-label>
+  <input matInput>
+  <mat-hint align="end">Город Улица Дом №</mat-hint>
+</mat-form-field>
+
+<mat-form-field color="accent" appearance="fill" floatlabel="auto" style="margin-left: 40px;">
+  <mat-label>Заголовок</mat-label>
+  <input matInput>
+  <mat-hint align="end">Название нового поста</mat-hint>
+</mat-form-field>
+<!--*******************************************************************-->
+<h1>stepper</h1>
+<!--*******************************************************************-->
+<mat-horizontal-stepper linear>
+  <mat-step label="1" completed=true>1</mat-step>
+  <mat-step label="2" completed=true>2
+    <div>
+      <button mat-button matStepperPrevious>Back</button>
+      <button mat button matStepperNext>Next</button>
+    </div>
+  </mat-step>
+  <mat-step label="3" completed=false>3</mat-step>
+</mat-horizontal-stepper>
+<!--*******************************************************************-->
 <h1>card</h1>
 <mat-card>
   <mat-card-title>
@@ -22,7 +175,7 @@
     <button>login</button>
   </mat-card-actions>
 </mat-card>
-
+<!--*******************************************************************-->
 <h1>mat expansion panel</h1>
 <mat-accordion multi="true" hideToggle>
   <mat-expansion-panel>
@@ -34,7 +187,8 @@
         Total Duration: 3 hour
       </mat-panel-description>
     </mat-expansion-panel-header>
-    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fuga eveniet autem veritatis dolores, necessitatibus rem molestiae voluptatum ipsam velit asperiores.</p>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fuga eveniet autem veritatis dolores, necessitatibus
+      rem molestiae voluptatum ipsam velit asperiores.</p>
     <mat-action-row>
       <button mat-button>Enroll</button>
     </mat-action-row>
@@ -48,7 +202,8 @@
         Total Duration: 2 hour
       </mat-panel-description>
     </mat-expansion-panel-header>
-    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fuga eveniet autem veritatis dolores, necessitatibus rem molestiae voluptatum ipsam velit asperiores.</p>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fuga eveniet autem veritatis dolores, necessitatibus
+      rem molestiae voluptatum ipsam velit asperiores.</p>
     <mat-action-row>
       <button mat-button>Enroll</button>
     </mat-action-row>
@@ -62,27 +217,25 @@
         Total Duration: 6 hour
       </mat-panel-description>
     </mat-expansion-panel-header>
-    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fuga eveniet autem veritatis dolores, necessitatibus rem molestiae voluptatum ipsam velit asperiores.</p>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fuga eveniet autem veritatis dolores, necessitatibus
+      rem molestiae voluptatum ipsam velit asperiores.</p>
     <mat-action-row>
       <button mat-button>Enroll</button>
     </mat-action-row>
   </mat-expansion-panel>
 </mat-accordion>
-
-
-
-
+<!--*******************************************************************-->
 <hr>
-
 <h1>GridList</h1>
 <mat-grid-list cols="2" rowHeight="100px">
-  <mat-grid-tile colspan="2">colspan</mat-grid-tile>
-  <mat-grid-tile rowspan="2">rowspan</mat-grid-tile>
-  <mat-grid-tile>tile</mat-grid-tile>
-  <mat-grid-tile rowspan="2">tile</mat-grid-tile>
-  <mat-grid-tile>tile</mat-grid-tile>
+  <mat-grid-tile class="check" colspan="2">colspan</mat-grid-tile>
+  <mat-grid-tile class="check" rowspan="2">rowspan</mat-grid-tile>
+  <mat-grid-tile class="check">tile</mat-grid-tile>
+  <mat-grid-tile class="check" rowspan="2">tile</mat-grid-tile>
+  <mat-grid-tile class="check">tile</mat-grid-tile>
 </mat-grid-list>
 <hr>
+<!--*******************************************************************-->
 <h1>
   List
 </h1>
@@ -111,7 +264,7 @@
     <p matLine>Var</p>
   </mat-list-item>
   <mat-divider>
-    
+
   </mat-divider>
   <mat-list-item>
     <mat-icon matListIcon>home</mat-icon>
@@ -123,10 +276,12 @@
   8
 -->
 <hr>
+<!--*******************************************************************-->
 
 <hr>
 <h2>Mat Menu</h2>
-<mat-menu #appMenu="matMenu" xPosition="after" ><!--[attribute] >yPosition="above" -->
+<mat-menu #appMenu="matMenu" xPosition="after">
+  <!--[attribute] >yPosition="above" -->
   <button mat-menu-item>Front</button>
   <button mat-menu-item>Back</button>
 </mat-menu>
@@ -160,29 +315,33 @@
   </ng-template>
 </mat-menu>
 
-<button mat-raised-button [matMenuTriggerData]="{name:'Vish',hobby:'sport'}" [matMenuTriggerFor]="lazyMenu">Vishwas</button>
-<button mat-raised-button [matMenuTriggerData]="{name:'Code',hobby:'develop'}" [matMenuTriggerFor]="lazyMenu">Code</button>
+<button mat-raised-button [matMenuTriggerData]="{name:'Vish',hobby:'sport'}"
+  [matMenuTriggerFor]="lazyMenu">Vishwas</button>
+<button mat-raised-button [matMenuTriggerData]="{name:'Code',hobby:'develop'}"
+  [matMenuTriggerFor]="lazyMenu">Code</button>
 
 <!-- ***************************************************************** -->
 <hr>
 <mat-sidenav-container>
-  <mat-sidenav #sidenav mode="push" (closed)="log('closed')" (opened)="log('opened')" [(opened)]="opened">Sidenav</mat-sidenav>
+  <mat-sidenav #sidenav mode="push" (closed)="log('closed')" (opened)="log('opened')" [(opened)]="opened">Sidenav
+  </mat-sidenav>
   <mat-sidenav-content>Main
-    <button (click)="opened=!opened" style="border: none;background-color: grey;color: honeydew;">toggle</button>
-    <button (click)="sidenav.open()">Open</button>
-    <button (click)="sidenav.close()">Close</button>
-    <button (click)="sidenav.toggle()">Toggle</button>
+    <button mat-button (click)="opened=!opened"
+      style="border: none;background-color: grey;color: honeydew;">toggle</button>
+    <button mat-button (click)="sidenav.open()">Open</button>
+    <button mat-button (click)="sidenav.close()">Close</button>
+    <button mat-button (click)="sidenav.toggle()">Toggle</button>
   </mat-sidenav-content>
 </mat-sidenav-container>
 <hr>
-  <mat-toolbar color="primary" class="navbar">
-    <span class="logo">Toolbar</span>
-    <div class="menu">
-      <span>Home</span>
-      <span>About</span>
-      <span>Map</span>
-    </div>
-  </mat-toolbar>
+<mat-toolbar color="primary" class="navbar">
+  <span class="logo">Toolbar</span>
+  <div class="menu">
+    <span>Home</span>
+    <span>About</span>
+    <span>Map</span>
+  </div>
+</mat-toolbar>
 <hr> <!-- ``````````````````````````````````````````````````````````` -->
 <ng-container *transloco="let t">
   <h1> {{ t("hello") }} </h1>
@@ -223,7 +382,8 @@
           <button mat-button color="primary">Primary</button>
           <button mat-button color="accent">Accent</button>
           <button mat-button color="warn">Warn</button>
-          <button mat-button color="red" style="color: blueviolet;font-size: 26px;background-color: rgb(251, 255, 0);font-weight: 100;">SIGN</button>
+          <button mat-button color="red"
+            style="color: blueviolet;font-size: 26px;background-color: rgb(251, 255, 0);font-weight: 100;">SIGN</button>
           <button mat-button disabled>Disabled</button>
           <a mat-button href="https://www.google.com/" target="_blank">Link</a>
         </div>
@@ -489,3 +649,4 @@
 
   </mat-tab>
 </mat-tab-group>
+<!--*******************************************************************-->

@@ -25,6 +25,8 @@ import { SubMenuComponent } from './sub-menu/sub-menu.component';
 import { SubMenuLayerComponent } from './sub-menu-layer/sub-menu-layer.component';
 import { Routes, RouterModule } from '@angular/router';
 import { Material2Module } from './material2/material2.module';
+import {map, startWith} from 'rxjs/operators';
+import { DialogExampleComponent } from './translate-component/dialog-example/dialog-example.component'
 //----------------------Material
 
 
@@ -47,8 +49,10 @@ import { Material2Module } from './material2/material2.module';
     ModalComponent,
     TranslateComponentComponent,
     SubMenuComponent,
-    SubMenuLayerComponent
+    SubMenuLayerComponent,
+    DialogExampleComponent
   ],
+  entryComponents:[DialogExampleComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
